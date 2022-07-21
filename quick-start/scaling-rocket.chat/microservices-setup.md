@@ -1,6 +1,6 @@
 # Microservices Setup
 
-![](<../../.gitbook/assets/2021-06-10\_22-31-38 (3) (3) (3) (3) (3) (3) (3) (3) (3) (2) (3) (1) (1) (1) (12) (10) (11).jpg>)
+![Enterprise](<../../.gitbook/assets/2021-06-10\_22-31-38 (3) (3) (3) (3) (3) (3) (3) (3) (3) (2) (3) (1) (1) (1) (12) (10) (11).jpg>)
 
 {% hint style="info" %}
 This feature is currently in the beta stage and can change without prior notice.
@@ -37,13 +37,13 @@ The following environment variables should be set for Rocket.Chat services as we
 
 Rocket.Chat microservices are composed of a few Docker containers:
 
-![](../../.gitbook/assets/micro-services-deployment-v0.1-2x-1-.png)
+![Microservices illustration](../../.gitbook/assets/micro-services-deployment-v0.1-2x-1-.png)
 
 ### Accounts
 
 Responsible for user authentications
 
-```
+```bash
 docker run \
 --name accounts-service \
 -e MONGO_URL=mongodb://mongo/rocketchat?replicaSet=rs01 \
@@ -55,7 +55,7 @@ rocketchat/account-service:latest
 
 Responsible for the validation of access to features
 
-```
+```bash
 docker run \
 --name authorization-service \
 -e MONGO_URL=mongodb://mongo/rocketchat?replicaSet=rs01 \
@@ -67,7 +67,7 @@ rocketchat/authorization-service:latest
 
 Web socket interface between server and clients
 
-```
+```bash
 docker run \
 --name ddp-streamer \
 -e MONGO_URL=mongodb://mongo/rocketchat?replicaSet=rs01 \
@@ -87,7 +87,7 @@ Can not be scaled to multiple containers
 
 Receives real-time data from MongoDB and emits that data to the system.
 
-```
+```bash
 docker run \
 --name mongodb-stream-hub \
 -e MONGO_URL=mongodb://mongo/rocketchat?replicaSet=rs01 \
@@ -103,7 +103,7 @@ Controls and update users' presence status.
 In a situation where you have a huge amount of data/users, you can get away with not running it to reduce the traffic of presence processing. If you are not running it, the user's online/offline status and notification will not work properly.
 {% endhint %}
 
-```
+```bash
 docker run \
 --name presence-service \
 -e MONGO_URL=mongodb://mongo/rocketchat?replicaSet=rs01 \
@@ -129,7 +129,7 @@ Once all services are up and running the web socket connections should be target
 
 If using Kubernetes, an Ingress like the following can be used:
 
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -145,7 +145,7 @@ spec:
         path: /(sockjs|websocket)
 ```
 
-## Summary:
+## Summary
 
 To summarize it:
 

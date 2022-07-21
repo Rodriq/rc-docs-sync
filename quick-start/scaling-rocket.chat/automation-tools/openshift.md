@@ -52,4 +52,3 @@ use rocketchat
 db.auth('rocketchat-admin','rocketchat')
 db.rocketchat_settings.update({_id:'Accounts_UseDNSDomainCheck'},{$set:{value:false}})
 ```
-

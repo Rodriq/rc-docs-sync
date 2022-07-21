@@ -18,7 +18,7 @@ We'll be working with Nginx in our examples, but it should be possible with othe
 
 We'll assume that you've configured Rocket.Chat to run as a systemd service. Since we want to run multiple instances simultaneously, we need to run at least two services. The only difference is the service name and port. If you don't have a service yet, the easiest way to do this for Rocket.Chat is to create a file in `/usr/lib/systemd/system/` and call it `rocketchat.service`
 
-```
+```apache
 [Unit]
 Description=Rocket.Chat Server
 After=syslog.target
@@ -46,7 +46,7 @@ Make sure the User and Group exist and both have `read`/`write`/`execute` Permis
 
 If you want multiple Services, create another file in `/usr/lib/systemd/system` and call it `rocketchat@.service` with the following content:
 
-```
+```apache
 [Unit]
 Description=Rocket.Chat Server
 After=syslog.target
@@ -150,7 +150,7 @@ Now restart Nginx: `service nginx restart`
 
 Run this as root (to enable the necessary modules to use proxy balancer):
 
-```
+```bash
 a2enmod proxy_html
 a2enmod proxy_balancer
 a2enmod headers
@@ -222,4 +222,3 @@ This is important for a couple of reasons:&#x20;
 
 1. Database reliability. You will want to make sure that your data is replicated, and you have another node if something happens to your primary.
 2. Rocket.Chat does what's called oplog tailing. The oplog is turned on when you set up a replicaset. Mongo makes use of this to publish events so the other nodes in the replicaset can make sure its data is up to date. Rocket.Chat makes use of this to watch for database events. If someone sends a message on Instance 1 and you are connected to Instance 2. Instance 2 watches for message insert events and then is able to show you a new message has arrived.
-

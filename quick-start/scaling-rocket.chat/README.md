@@ -9,4 +9,4 @@ As your number of concurrent users grows you may begin to experience some system
 You have two options to scale your environment in order to maintain performance for your users:
 
 1. [Microservices](microservices-setup.md)
-2. [Scale by deploying multiple instances of Rocket.Chat ](running-multiple-instances.md)
+2. [Scale by deploying multiple instances of Rocket.Chat](running-multiple-instances.md)

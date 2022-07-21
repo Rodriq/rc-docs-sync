@@ -33,7 +33,7 @@ If not, check to see if you can install `pip` via your system's package manager 
 
 Or, if you're on Mac OS X, and you're not using [Homebrew](http://brew.sh) or [pkgsrc](https://github.com/cmacrae/saveosx), you should be able to install `pip` using `easy_install`, like so: `$ sudo easy_install pip` then
 
-```
+```bash
 $ sudo pip install ansible
 ```
 
@@ -60,7 +60,7 @@ So, now you've got Ansible installed, you can get ready to deploy Rocket.Chat!
 
 Make a directory somewhere, perhaps in your home directory, or somewhere you keep Git repositories or code. It doesn't really matter what it's called, but for example's sake, we'll call ours `ansible`:
 
-```
+```bash
 ~/ $ mkdir ansible
 ~/ $ cd ansible
 ~/ansible $
