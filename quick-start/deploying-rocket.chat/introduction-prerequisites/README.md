@@ -5,7 +5,7 @@ Regardless of the platform you wish to deploy on or the method of deployment, yo
 ## Official Recommendation
 
 {% hint style="success" %}
-We offer a variety of Deployment methods, and we recommend you set up using our [Docker & Docker Compose](../rapid-deployment-methods/docker-and-docker-compose/) guide for several reasons mentioned below.
+We offer a variety of Deployment methods, and we recommend you set up using our [Docker & Docker Compose](../../installing-and-updating/rapid-deployment-methods/docker-and-docker-compose) guide for several reasons mentioned below.
 {% endhint %}
 
 In order to obtain official support from our team, we have a minimum set of requirements. These requirements are necessary for us to access essential system information, to provide an SLA, to answer questions, or to provide a solution for the problem.
@@ -25,7 +25,7 @@ Rocket.Chat's own cloud uses our official Docker images, which makes this instal
 [Docker](https://www.docker.com) is widely used to package applications in containers and distribute them as images, providing abstraction and isolation layers from the OS (operational system). It allows the application to be shipped with a specific version of the OS compatibility layer and his own dependencies already installed and configured.
 
 {% content-ref url="../rapid-deployment-methods/docker-and-docker-compose/docker-containers/" %}
-[docker-containers](../rapid-deployment-methods/docker-and-docker-compose/docker-containers/)
+[docker-containers](../../installing-and-updating/rapid-deployment-methods/docker-and-docker-compose/docker-containers)
 {% endcontent-ref %}
 
 ### Why Docker?
@@ -108,5 +108,5 @@ Production deployments should continually collect metrics regarding the installa
 Rocket.Chat cuts a new release every month, please check the link below for more information about the release cycles and make sure you are running a supported version.
 
 {% content-ref url="../../../getting-support/" %}
-[getting-support](../../../getting-support/)
+[getting-support](../../../getting-support)
 {% endcontent-ref %}

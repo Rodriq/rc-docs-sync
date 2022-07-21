@@ -79,7 +79,7 @@ This user guide incorporates a description of the features and capabilities, mod
 {% endcontent-ref %}
 
 {% content-ref url="quick-start/installing-and-updating/hardware-requirements.md" %}
-[hardware-requirements.md](quick-start/installing-and-updating/hardware-requirements.md)
+[hardware-requirements.md](quick-start/deploying-rocket.chat/hardware-requirements.md)
 {% endcontent-ref %}
 
 ## Support

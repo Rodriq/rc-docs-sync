@@ -7,7 +7,7 @@ Rocket.Chat can be hosted on our Cloud, installed from a variety of marketplaces
 {% endcontent-ref %}
 
 {% content-ref url="../installing-and-updating/hardware-requirements.md" %}
-[hardware-requirements.md](../installing-and-updating/hardware-requirements.md)
+[hardware-requirements.md](hardware-requirements.md)
 {% endcontent-ref %}
 
 {% content-ref url="../installing-and-updating/rapid-deployment-methods/docker-and-docker-compose/" %}

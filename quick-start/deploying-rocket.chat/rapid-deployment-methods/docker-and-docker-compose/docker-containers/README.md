@@ -9,16 +9,16 @@ This guide will walk you through the installation and configuration of a Docker-
 ## What we'll cover in this guide
 
 1. [Securing the server: Firewall basics (optional)](https://docs.rocket.chat/quick-start/installing-and-updating/rapid-deployment-methods/docker-and-docker-compose/docker-containers#1.-securing-the-server-firewall-basics-optional-recommended)
-2. [Securing the server: Fail2Ban IDS (optional)](./#2.-securing-the-server-fail2ban-optional-recommended)
-3. [Installing Docker and Docker-Compose](./#3.-installing-docker-and-docker-compose)
-4. [Editing the hosts file](./#4.-editing-the-hosts-file)
-5. [Installing Nginx SSL Reverse Proxy](./#5.-installing-nginx-and-ssl-certificate)
-6. [Creating docker-compose.yml](./#6.-create-the-docker-compose.yml-file-and-local-directories)
-7. [Automatic start-up, and crash recovery](./#7.-automatic-startup-and-crash-recovery)
-8. [Reboot & Status check](./#8.-reboot-and-status-check)
-9. [Registering & Configuring Hubot, the chat robot](./#9.-registering-and-configuring-hubot-the-chat-robot)
-10. [FAQ](./#faq) [& Troubleshooting](./#troubleshooting)
-11. [Known Issues](./#11.-known-issues)
+2. [Securing the server: Fail2Ban IDS (optional)](../../../../installing-and-updating/rapid-deployment-methods/docker-and-docker-compose/docker-containers#2.-securing-the-server-fail2ban-optional-recommended)
+3. [Installing Docker and Docker-Compose](../../../../installing-and-updating/rapid-deployment-methods/docker-and-docker-compose/docker-containers#3.-installing-docker-and-docker-compose)
+4. [Editing the hosts file](../../../../installing-and-updating/rapid-deployment-methods/docker-and-docker-compose/docker-containers#4.-editing-the-hosts-file)
+5. [Installing Nginx SSL Reverse Proxy](../../../../installing-and-updating/rapid-deployment-methods/docker-and-docker-compose/docker-containers#5.-installing-nginx-and-ssl-certificate)
+6. [Creating docker-compose.yml](../../../../installing-and-updating/rapid-deployment-methods/docker-and-docker-compose/docker-containers#6.-create-the-docker-compose.yml-file-and-local-directories)
+7. [Automatic start-up, and crash recovery](../../../../installing-and-updating/rapid-deployment-methods/docker-and-docker-compose/docker-containers#7.-automatic-startup-and-crash-recovery)
+8. [Reboot & Status check](../../../../installing-and-updating/rapid-deployment-methods/docker-and-docker-compose/docker-containers#8.-reboot-and-status-check)
+9. [Registering & Configuring Hubot, the chat robot](../../../../installing-and-updating/rapid-deployment-methods/docker-and-docker-compose/docker-containers#9.-registering-and-configuring-hubot-the-chat-robot)
+10. [FAQ](../../../../installing-and-updating/rapid-deployment-methods/docker-and-docker-compose/docker-containers#faq) [& Troubleshooting](../../../../installing-and-updating/rapid-deployment-methods/docker-and-docker-compose/docker-containers#troubleshooting)
+11. [Known Issues](../../../../installing-and-updating/rapid-deployment-methods/docker-and-docker-compose/docker-containers#11.-known-issues)
 
 ## Prerequisites
 
@@ -165,7 +165,7 @@ sudo apt-get install nginx
 
 If you don't have a certificate already, you can grab one for free at [Let's Encrypt](https://letsencrypt.org).
 
-Or, if you want to use a self-signed SSL cert instead, skip ahead to [Self-Signed SSL](./#5b-self-signed-ssl).
+Or, if you want to use a self-signed SSL cert instead, skip ahead to [Self-Signed SSL](../../../../installing-and-updating/rapid-deployment-methods/docker-and-docker-compose/docker-containers#5b-self-signed-ssl).
 
 **Install the private key (created when you generated the CSR)**
 
@@ -277,7 +277,7 @@ sudo nginx -t
 
 #### Create docker-compose.yml file:
 
-To create a docker-compose file, please follow the instructions [here](../).
+To create a docker-compose file, please follow the instructions [here](../../../../installing-and-updating/rapid-deployment-methods/docker-and-docker-compose).
 
 **Create the directories:**
 
@@ -403,7 +403,7 @@ sudo ufw reload
 http://chat.inumio.com:3000
 ```
 
-**PROBLEM?** See [Section 10: Troubleshooting](./#10-troubleshooting--faq)
+**PROBLEM?** See [Section 10: Troubleshooting](../../../../installing-and-updating/rapid-deployment-methods/docker-and-docker-compose/docker-containers#10-troubleshooting--faq)
 
 Once you've successfully reached your chat room login page, you need to register your admin account. By default, the first account to register on Rocket.Chat becomes the admin, so if your chat room is public, do this immediately in order to prevent someone else from registering and becoming the administrator.
 

@@ -163,7 +163,7 @@ That being said, here's how you can find out if **your** browser version is stil
 
 ## Hardware
 
-The support is limited to installations matching the requirements described in the [Minimum ](../quick-start/installing-and-updating/hardware-requirements.md)[Hardware](../quick-start/installing-and-updating/hardware-requirements.md) [Requirements](../quick-start/installing-and-updating/hardware-requirements.md) page.
+The support is limited to installations matching the requirements described in the [Minimum ](../quick-start/deploying-rocket.chat/hardware-requirements.md)[Hardware](../quick-start/deploying-rocket.chat/hardware-requirements.md) [Requirements](../quick-start/deploying-rocket.chat/hardware-requirements.md) page.
 
 ## Monitoring
 

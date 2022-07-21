@@ -34,40 +34,46 @@ Starting with the major release 4.X.Y of Rocket.Chat, MongoDB has to be setup wi
 
 #### Step-by-step guide
 
-1.  Create a database dump of your existing MongoDB, save it on the host to have a backup just in case:
+1. Create a database dump of your existing MongoDB, save it on the host to have a backup just in case:
 
     ```bash
      cd /opt/rocketchat
      docker-compose exec mongo mongodump --archive=/dump/mmap --gzip
      cp /data/dump/mmap ~/mongo-mmap-dump.gzip
     ```
-2.  Stop your existing Rocket.Chat system including all its services (especially MongoDB).
+
+2. Stop your existing Rocket.Chat system including all its services (especially MongoDB).
 
     ```bash
      docker-compose stop
     ```
-3.  [Download the repository](https://github.com/RocketChat/docker-mmap-to-wiredtiger-migration/archive/main.zip) or clone it using `git` and extract it to `/opt/rocketchat-migration`:
+
+3. [Download the repository](https://github.com/RocketChat/docker-mmap-to-wiredtiger-migration/archive/main.zip) or clone it using `git` and extract it to `/opt/rocketchat-migration`:
 
     ```bash
      git clone https://github.com/RocketChat/docker-mmap-to-wiredtiger-migration /opt/rocketchat-migration
     ```
-4.  Copy the `docker/` folder that holds the Dockerfile of the custom migrator image into your existing compose folder:
+
+4. Copy the `docker/` folder that holds the Dockerfile of the custom migrator image into your existing compose folder:
 
     ```bash
      cp -r /opt/rocketchat-migration/docker /opt/rocketchat/docker
     ```
-5.  Backup and rename your current `docker-compose.yml` file to `docker-compose.mmap.yml`:
+
+5. Backup and rename your current `docker-compose.yml` file to `docker-compose.mmap.yml`:
 
     ```bash
      mv /opt/rocketchat/docker-compose.yml /opt/rocketchat/docker-compose.mmap.yml
     ```
-6.  Copy the new `docker-compose.yml` file into your compose folder:
+
+6. Copy the new `docker-compose.yml` file into your compose folder:
 
     ```bash
      cp /opt/rocketchat-migration/docker-compose.yml /opt/rocketchat/docker-compose.yml
     ```
+
 7. Apply any possible customizations that you had in your old `docker-compose.mmap.yml` file to the new one (volume, port mappings, service names, etc.)
-8.  Run `diff` and make sure it looks (more or less) like the output below when you compare your old and new `docker-compose.yml` files:
+8. Run `diff` and make sure it looks (more or less) like the output below when you compare your old and new `docker-compose.yml` files:
 
     ```bash
      diff /opt/rocketchat/docker-compose.mmap.yml /opt/rocketchat/docker-compose.yml
@@ -118,11 +124,12 @@ Starting with the major release 4.X.Y of Rocket.Chat, MongoDB has to be setup wi
       * Use custom `Entrypoint` that applies the migration
       * Use `--storageEngine=wiredTiger` switch instead of `--storageEngine=mmapv1`
     * Added "migrator" service
-9.  Build the "migrator" image and start up the containers again:
+9. Build the "migrator" image and start up the containers again:
 
     ```bash
      docker-compose up --build -d
     ```
+
 10. Wait for the migration to be completed - optionally check logs of "migrator" and "mongo" containers:
 
     ```bash

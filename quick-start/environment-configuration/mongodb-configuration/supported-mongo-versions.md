@@ -34,7 +34,7 @@ You can change `latest` with any version number and get more specific informatio
 
 Using `curl` with `jq` would look something like:
 
-```
+```json
 {
     "tag": "4.8.1",
     "commit": "0b106e3645c313592a99610e60f7bcca5b99cf93",
@@ -83,4 +83,4 @@ db.runCommand({ grantRolesToUser: "YOUR_USER" , roles: [{role: "clusterMonitor",
 
 ## Supported Storage Engines
 
-Mmapv1 is no longer supported in MongoDB since version 4.2. So to make sure you update your Rocket.Chat installations easily in the future, use the [WiredTiger](https://docs.mongodb.com/manual/core/wiredtiger/) storage engine. If you're already running mmapv1, please [migrate to wiredTiger](mongodb-mmap-to-wiredtiger-migration.md) as soon as possible.
+Mmapv1 is no longer supported in MongoDB since version 4.2. So to make sure you update your Rocket.Chat installations easily in the future, use the [WiredTiger](https://docs.mongodb.com/manual/core/wiredtiger/) storage engine. If yomongodb-mmap-to-wiredtiger-migration.mdongodb-configuration/mongodb-mmap-to-wiredtiger-migration.md) as soon as possible.
